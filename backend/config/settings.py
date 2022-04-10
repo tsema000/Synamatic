@@ -54,7 +54,6 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
-    # To allow CORS (Cross-origin resource sharing)
     'corsheaders.middleware.CorsMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
