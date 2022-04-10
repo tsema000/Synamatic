@@ -1,16 +1,11 @@
-# Forum App in React & Redux + Django
-
-```
-Forum App, with a frontend built in React & Redux and a backend built in Django API.
-```
-
+# This is a synamatic App where you can see the latest movie trailors.
 ## Live Demo
 
 **This App uses a Heroku free plan, so I am afraid that it takes time to load the pages.**
 
-Check out [FRONTEND LIVE DEMO](https://forum-prod-frontend.herokuapp.com/) here!!
+Check out [FRONTEND LIVE DEMO](https://demo-frontend-pro.herokuapp.com/) here!!
 
-Check out [API LIVE DEMO](https://forum-prod-api.herokuapp.com/) here!!
+Check out [API LIVE DEMO](https://demo-backend-pro.herokuapp.com/) here!!
 
 ## Tech used
 
