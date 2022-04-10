@@ -29,10 +29,10 @@ SECRET_KEY = 'django-insecure-ov#r^^&xv&^0vmc(zj&h_t^$*52@8jicn=%*z*@s-=li!s_p@=
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'forum-prod-api.herokuapp.com']
-CORS_ALLOW_ALL_ORIGINS = False
-CORS_ALLOWED_ORIGINS = ['http://localhost:3000',
-                        'http://127.0.0.1:3000', 'https://forum-prod-frontend.herokuapp.com']
+ALLOWED_HOSTS = ['*']
+CORS_ALLOW_ALL_ORIGINS = True
+# CORS_ALLOWED_ORIGINS = ['http://localhost:3000',
+#                         'http://127.0.0.1:3000', 'https://forum-prod-frontend.herokuapp.com']
 
 # Application definition
 
@@ -56,6 +56,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     # To allow CORS (Cross-origin resource sharing)
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -110,7 +111,7 @@ DATABASES = {
 }
 
 # Heroku PostgreSQL Database
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
 
 
 # Password validation
@@ -169,4 +170,3 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10
 }
-django_heroku.settings(locals())

@@ -1,0 +1,426 @@
+/*******************************************************
+COMMON
+*******************************************************/
+html body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    color: rgb(224, 224, 224);
+    background-color: rgb(20, 20, 19);
+    font-family: Spartan;
+}
+a {
+    text-decoration: none;
+    color: white;
+}
+.row {
+    display: flex;
+}
+.space-between {
+    justify-content: space-between;
+}
+.space-evenly {
+    justify-content: space-evenly;
+}
+.p-10 {
+    padding: 10px;
+}
+.relative {
+    position: relative;
+}
+.absolute {
+    position: absolute;
+}
+.p-20 {
+    padding: 20px;
+}
+.p-25 {
+    padding: 30px;
+}
+.m-10 {
+    margin: 10px;
+}
+.m-15 {
+    margin: 15px;
+}
+.m-20 {
+    margin: 20px;
+}
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+.trailer {
+    background-color: rgb(44, 44, 43);
+    border-radius: 15px;
+    height: 30px;
+    width: fit-content;
+}
+.trailer .playtrailor {
+    height: 30px;
+}
+.trailer .date {
+    margin: 0;
+}
+@media screen and (max-width: 1100px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+@media screen and (max-width: 800px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media screen and (max-width: 550px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+/*******************************************************
+HEADER
+*******************************************************/
+
+header {
+    position: relative;
+}
+header .navbar {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    border-bottom: 1px solid rgb(248, 244, 244, 0.6);
+    z-index: 3;
+}
+header .logo img {
+    height: 50px;
+    padding: 10px 30px;
+    position: absolute;
+    left: 0;
+}
+header .menus {
+    text-align: center;
+}
+.searchbox { 
+    position: relative;
+    width: fit-content;
+    padding: 3px;
+}
+.searchbox img {
+    position: absolute;
+    right: 0;
+    width: 25px;
+    padding: 4px;
+}
+.searchbox input {
+    background-color: rgb(0, 0, 0, 0);
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+    border: 1px solid rgb(224, 224, 224);
+    color: white;
+    font-size: 20px;
+}
+
+header .menus .category img {
+    width: 35px;
+}
+header .menus .favourites img {
+    width: 15px;
+}
+header .sp-menu {
+    display: none;
+}
+header .sp-logo {
+    display: none;
+}
+.sp-search {
+    display: none;
+}
+.searchpopup {
+    position: absolute;
+    top: 0px;
+    right: -60px;
+}
+.togglemenu {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    background-color: rgb(0, 0, 0, 0.9);
+    border-bottom-right-radius: 20px;
+}
+@media screen and (max-width: 800px) {
+    header .menus {
+        display: none;
+    }
+    header .logo {
+        display: none;
+    }
+    header .sp-menu {
+        margin: 10px;
+        height: 50px;
+        display: block;
+    }
+    header .sp-menu.down {
+        transform: rotate(90deg);
+    }
+    header .sp-logo {
+        display: block;
+        height: 50px;
+        margin: 10px;
+    }
+    .sp-search {
+        display: block;
+        margin: 20px;
+        width: 30px;
+    }
+}
+
+/*******************************************************
+Cover
+*******************************************************/
+
+.cover {
+    width: 100%;
+    height: 90%;
+}
+.cover .sp-backgroundcover {
+    display: none;
+}
+.cover .backgroundcover {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+}
+.cover .gradient {
+    background: linear-gradient(rgb(41, 40, 40, 0.6) 10%, rgb(0, 0, 0, 0) 50%, rgb(41, 40, 40));
+    position: absolute;
+    height: 90%;
+    width: 100%;
+    z-index: 2;
+}
+.cover .gradient .coverdetails {
+    position: absolute;
+    bottom: 0;
+}
+.cover .gradient .coverdetails .trailer {
+    background-color: rgb(20, 20, 19);
+    height: 35px;
+    border-radius: 20px;
+}
+.cover .gradient .trailer img {
+    height: 35px;
+}
+.cover .gradient .coverdetails .cover-description {
+    width: 60%;
+}
+.cover .gradient .coverdetails .date {
+    font-size: 20px;
+    margin: 0;
+}
+.cover .gradient .coverdetails .cover-description {
+    color: rgb(224, 224, 224, 0.8);
+}
+@media screen and (max-width: 800px) {
+    .cover {
+        height: 105vh;
+    }
+    .cover .backgroundcover {
+        display: none;
+    }
+    .cover .sp-backgroundcover {
+        display: block;
+        width: 100%;
+        height: 90vh;
+        object-fit: cover;
+    }
+    .sp-coverdetails {
+        flex-direction: column;
+        width: fit-content;
+        margin: auto;
+        text-align: center;
+    }
+    .cover .gradient .coverdetails .cover-description {
+        width: 100%;
+    }
+    .cover .gradient .coverdetails {
+        top: 75vh;
+    }
+}
+/*******************************************************
+Content
+*******************************************************/
+.content {
+    min-height: 80vh;
+}
+
+.content .section-heading {
+    font-size: 30px;
+}
+.content .pt {
+    padding-top: 70px;
+}
+.content .cards {
+    position: relative;
+    height: 450px;
+    width: 250px;
+    margin: 30px auto;
+}
+.content .cards .like {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+}
+.content .cards .like img {
+    width: 40px;
+}
+.content .cards .cardimage {
+    height: 80%;
+    width: 100%;
+    object-fit: cover;
+}
+.content .cards .carddetails .dark {
+    color: rgb(224, 224, 224, 0.5);
+}
+.content .cards .carddetails .btn-text {
+    padding: 7px 20px;
+}
+.content .divider {
+    margin: 60px auto;
+    border: none;
+    border-top: 1px solid rgb(224, 218, 218, 0.3);
+    width: 60%;
+}
+@media screen and (max-width: 1100px) {
+}
+
+/*******************************************************
+Footer
+*******************************************************/
+
+footer {
+    margin-top: 100px;
+}
+footer img {
+    height: 40px;
+    padding: 1px 20px;
+}
+
+/*******************************************************
+Popupbox
+*******************************************************/
+
+.popupbox {
+    position: fixed;
+    background-color: rgba(250, 242, 242, 0.5);
+    left: 0;
+    right: 0;
+    z-index: 4;
+    height: 100%;
+}
+.popupbox .popup {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.popupbox .box {
+    position: absolute;
+    top: 40px;
+    width: 84%;
+    left: 8%;
+    height: 80%;
+}
+.popupbox .popup .box .coverimage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.popupbox .popup .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    height: 30px;
+}
+.popupbox .popup .popup-content {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 30%;
+    background: linear-gradient(rgb(0, 0, 0, 0), rgb(0, 0, 0, 1));
+}
+
+.preview {
+    position: fixed;
+    background-color: #7070708a;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 10px;
+    z-index: 2;
+}
+.preview .preview-inner {
+    position: relative;
+    margin: 5px;
+    padding: 10px;
+    background-color: #70707000;
+}
+.movie-preview {
+    background-color: #70707000;
+}
+.preview .preview-inner .preview-preview {
+    position: absolute;
+    left: 35%;
+    background-color: white;
+    border-radius: 3%;
+    margin-top: 6%;
+    width: 25%;
+    margin-right: 10%;
+}
+.preview-icon {
+    width: 5%;
+    float: right;
+    margin-right: 5%;
+    background-color: #70707000;
+}
+.preview-image {
+    width: 40%;
+    margin-left: 30%;
+    margin-top: 4%;
+    height: 600px;
+}
+@media screen and (max-width: 400px) {
+    .preview-image {
+        width: 80%;
+        margin-left: 10%;
+        padding: 1px;
+        height: 500px;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .preview-image {
+        margin-top: 5%;
+        background-color: #70707000;
+    }
+}
+.images {
+    width: 50%;
+    margin-left: 25%;
+}
+li.option {
+    margin: 0;
+    position: absolute;
+    background-color: #f0f8ff17;
+    height: 88vh;
+    width: 24%;
+    left: 38%;
+}
+.last {
+    position: absolute;
+}
+p.para {
+    position: absolute;
+    display: contents;
+}
